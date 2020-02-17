@@ -159,6 +159,10 @@ if(apply_filters('pmb-print-page-treat-as-single', true)){
                 ?>
                 <input type="submit" onclick="pmb_copy()" value="<?php esc_attr_e('Copy to Clipboard', 'print-my-blog'); ?>"/>
                 <?php
+            } elseif($pmb_format === 'pro_pdf'){// Pro PDF/
+                ?>
+                <input type="submit" value="<?php esc_attr_e('Generate PDF', 'print-my-blog');?>"/>
+                <?php
             } else { // default: print
                 ?>
                 <input type="submit" onclick="window.print()" value="<?php esc_attr_e('Print', 'print-my-blog'); ?>"/>

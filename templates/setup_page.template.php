@@ -286,6 +286,10 @@ use PrintMyBlog\domain\PrintOptions;
                             'help_text' => esc_html__('Make a PDF file, intended for reading from a computer or other device, using your browser or a browser extension.', 'print-my-blog'),
                             'link' => 'https://wordpress.org/plugins/print-my-blog/#how%20do%20i%20create%20a%20pdf%20using%20print%20my%20blog%3F'
                         ),
+                        'pro_pdf'=> array(
+                            'label' => esc_html__('Pro PDF', 'print-my-blog'),
+                            'help_text' => esc_html__('Make a Professional-quality PDF using %1$sDoc Raptor%2$s and %3$dPrinceXML%2$s.', 'print-my-blog')
+                        ),
                         'ebook' => array(
                             'label' => esc_html__('eBook (ePub or MOBI)', 'print-my-blog'),
                             'help_text' => esc_html__('Make a free eBook using dotEPUB.', 'print-my-blog'),
@@ -293,7 +297,7 @@ use PrintMyBlog\domain\PrintOptions;
                         ),
                         'html' => array(
                                 'label' => esc_html__('HTML', 'print-my-blog'),
-                            'help_text' => esc_html__('Easily copy-and-paste into another program like Microsoft Word or Google Docs. (Although other programs will not format the content as well as WordPress.)', 'print-my-blog')
+                                'help_text' => esc_html__('Easily copy-and-paste into another program like Microsoft Word or Google Docs. (Although other programs will not format the content as well as WordPress.)', 'print-my-blog')
                         ),
                     );
                     foreach($formats as $key => $details){

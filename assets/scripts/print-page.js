@@ -732,6 +732,18 @@ function PmbPrintPage(pmb_instance_vars, translations) {
     }
 }
 
+function pmb_print_pro()
+{
+    // Grab the HTML
+    var html = jQuery('html').html();
+
+    // Send it off
+    jQuery.ajax(
+        
+    )
+    // Download response
+}
+
 /**
  * Show instrutions on how to get a print preview.
  */
