@@ -741,7 +741,7 @@ function pmb_print_pro()
     jQuery.ajax(
         {
             method:'POST',
-            url:'http://printmy.blog/wp-json/pmb/v1/pdf/generate',
+            url:'https://printmy.blog/wp-json/pmb/v1/pdf/generate',
             data:{html:html},
             dataType:'json'
         }
