@@ -734,13 +734,28 @@ function PmbPrintPage(pmb_instance_vars, translations) {
 
 function pmb_print_pro()
 {
+
     // Grab the HTML
     var html = jQuery('html').html();
-
     // Send it off
     jQuery.ajax(
-        
-    )
+        {
+            method:'POST',
+            url:'http://printmy.blog/wp-json/pmb/v1/pdf/generate',
+            data:{html:html},
+            dataType:'json'
+        }
+    ).done(function(response){
+        // alert('success!');
+        window.location = response.pdf_file;
+        // var button = document.getElementById('pmb-pdf-button-download');
+        // button.href="data:application/pdf,"+encodeURIComponent(response.pdf_content);
+        //
+        // var button = jQuery('#pmb-pdf-button-download');
+        // button.attr('href',"data:application/pdf,"+encodeURIComponent(response.pdf_content));
+    }).fail(function(jqXHR, textStatus){
+        alert('fail' + textStatus);
+    });
     // Download response
 }
 

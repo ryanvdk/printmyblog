@@ -161,7 +161,8 @@ if(apply_filters('pmb-print-page-treat-as-single', true)){
                 <?php
             } elseif($pmb_format === 'pro_pdf'){// Pro PDF/
                 ?>
-                <input type="submit" value="<?php esc_attr_e('Generate PDF', 'print-my-blog');?>"/>
+                <input type="submit"onclick="pmb_print_pro()" value="<?php esc_attr_e('Generate PDF', 'print-my-blog');?>"/>
+
                 <?php
             } else { // default: print
                 ?>
