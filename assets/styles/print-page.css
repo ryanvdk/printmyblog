@@ -221,3 +221,5 @@ mess up the layout (especially in galleries!) Footnotes are much better. Or link
 .pmb-posts a[href]:after {
     content:'';
 }
+/* Prince CSS */
+@page { size: 1280px 960px }
