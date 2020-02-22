@@ -222,4 +222,6 @@ mess up the layout (especially in galleries!) Footnotes are much better. Or link
     content:'';
 }
 /* Prince CSS */
-@page { size: 1280px 960px }
+.pmb-image{
+    float:top unless-fit;
+}
