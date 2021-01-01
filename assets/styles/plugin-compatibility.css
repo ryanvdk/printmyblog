@@ -70,3 +70,17 @@ Hide Google Recaptcha from printouts
         width:100% !important;
     }
 }
+
+/*
+    Hide Google Language Translator hovering "Translate" button. See https://wordpress.org/plugins/google-language-translator/
+ */
+.pmb-print-page #glt-translate-trigger{
+    display:none !important;
+}
+
+/**
+Hide Dark Mode Switcher see https://wordpress.org/plugins/wp-dark-mode/
+ */
+.pmb-print-page .wp-dark-mode-switcher{
+    display: none !important;
+}
