@@ -32,12 +32,6 @@ class PmbCommon extends BaseController
 
     public function enqueueScripts()
     {
-        wp_register_style(
-            'jquery-ui',
-            'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css',
-            array(),
-            '1.8'
-        );
         wp_enqueue_style(
             'pmb_common',
             PMB_ASSETS_URL . 'styles/pmb-common.css',
@@ -69,9 +63,15 @@ class PmbCommon extends BaseController
             filemtime(PMB_ASSETS_DIR .  'scripts/setup-page.js')
         );
         wp_register_style(
+            'pmb-jquery-ui-datepicker',
+            PMB_ASSETS_URL . 'styles/libs/pmb-jquery-ui-datepicker.min.css',
+            [],
+            '1.12.1'
+        );
+        wp_register_style(
             'pmb-setup-page',
             PMB_ASSETS_URL . 'styles/setup-page.css',
-            ['pmb_common', 'pmb-select2', 'jquery-ui'],
+            ['pmb_common', 'pmb-select2', 'pmb-jquery-ui-datepicker'],
             filemtime(PMB_ASSETS_DIR .  'styles/setup-page.css')
         );
         wp_localize_script(

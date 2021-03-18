@@ -44,6 +44,8 @@ function PmbSetupPage(pmb_instance_vars, translations) {
 			changeYear: true,
 			changeMonth: true,
 		});
+		// move the jQuery UI datepicker div into the pmb-jquery-ui element so our CSS applies to it
+		jQuery('#ui-datepicker-div').appendTo('.pmb-jquery-ui');
 
 		// If they change the post type, change the taxonomies available.
 		jQuery('input' + this.post_type_selector + '[type=radio]').change(() => {

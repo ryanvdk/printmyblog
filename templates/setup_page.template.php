@@ -8,7 +8,7 @@ use PrintMyBlog\domain\PrintOptions;
 use PrintMyBlog\services\display\FormInputs;
 
 ?>
-<div class="wrap nosubsub">
+<div class="wrap nosubsub pmb-jquery-ui">
 <h1><?php esc_html_e('Print My Blog - Print Now','print-my-blog' );?></h1>
     <?php
     if(isset($legacy_page)){
