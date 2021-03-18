@@ -526,8 +526,10 @@ function PmbPrintPage(pmb_instance_vars, translations) {
         var desired_max_height = this.image_size * 100; // 1 inch is about 100 pixels.
         var wp_block_galleries = jQuery('.pmb-posts .wp-block-gallery');
         if(this.image_size === 0){
-            // Remove all images, except emojis.
-            jQuery('.pmb-posts img:not(.emoji)').remove();
+            // Remove all images (and the figures that wrap them), except emojis.
+            var images = jQuery('.pmb-posts img:not(.emoji)');
+            images.parents('figure').remove()
+            images.remove();
             wp_block_galleries.remove();
         } else{
             var big_images = jQuery('.pmb-posts img:not(.emoji, div.tiled-gallery img, img.fg-image, img.size-thumbnail)').filter(function(){
