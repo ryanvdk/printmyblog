@@ -26,6 +26,7 @@ class PmbPrintPage extends BaseController
     protected $proxy_for;
     public function setHooks()
     {
+        echo '<!-- PMB DEBUG setting hooks -->';
         add_filter(
             'template_include',
             array($this, 'templateRedirect'),
@@ -43,13 +44,15 @@ class PmbPrintPage extends BaseController
      */
     public function templateRedirect($template)
     {
-
+        echo '<!-- PMB DEBUG PmbPrintPage::templateRedirect start. $_GET:' . var_export($_GET, true) . ' -->';
         if (isset($_GET[PMB_PRINTPAGE_SLUG])) {
             try {
+                echo '<!-- PMB DEBUG getting site info -->';
                 $site_info = new RestApiDetector($this->getFromRequest('site', ''));
             } catch (RestApiDetectorError $exception) {
                 global $pmb_wp_error;
                 $pmb_wp_error = $exception->wp_error();
+                echo '<!-- PMB DEBUG PmbPrintPage::templateRedirect exception caught: ' . var_export($exception, true) . ' -->';
                 return PMB_TEMPLATES_DIR . 'print_page_error.template.php';
             }
             global $pmb_site_name,
@@ -155,6 +158,7 @@ class PmbPrintPage extends BaseController
             }
             $pmb_format = $this->getFromRequest('format', 'print');
             $pmb_browser = $this->getBrowser();
+            echo '<!-- PMB DEBUG returning print page template now! -->';
             return PMB_TEMPLATES_DIR . 'print_page.template.php';
         }
         return $template;
