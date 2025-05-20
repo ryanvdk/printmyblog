@@ -1,0 +1,31 @@
+{
+    "name": "mnelson4/printmyblog",
+    "description": "WordPress Plugin that simplifies printing your entire blog.",
+    "license": "GPL-2.0-or-later",
+    "type": "wordpress-plugin",
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "szepeviktor/phpstan-wordpress": "^0.7.0",
+        "squizlabs/php_codesniffer": "^3.5.4",
+        "wp-coding-standards/wpcs": "^2.3",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2"
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+    "autoload": {
+        "psr-4": {
+            "mnelson4\\": "src/mnelson4/",
+            "PrintMyBlog\\": "src/PrintMyBlog/",
+            "Twine\\": "src/Twine/"
+        }
+    },
+    "scripts": {
+        "release": "git archive HEAD --format=zip --output ../printmyblog.zip && git tag",
+        "phpstan": "phpstan analyze --debug",
+        "phpcs": "phpcs",
+        "phpcbf": "phpcbf"
+    }
+}
